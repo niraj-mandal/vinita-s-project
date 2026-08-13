@@ -1,0 +1,137 @@
+.consulting-section {
+  background-color: var(--background);
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.consulting-container {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.consulting-image-wrapper {
+  width: 60%;
+  position: relative;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  height: 80vh;
+  min-height: 600px;
+}
+
+.consulting-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.consulting-content {
+  width: 45%;
+  background-color: var(--background);
+  padding: 4rem;
+  position: absolute;
+  right: 0;
+  z-index: 2;
+  box-shadow: -20px 0 50px rgba(33, 27, 24, 0.02);
+}
+
+.consulting-content .signature-line-group {
+  margin-bottom: 2.5rem;
+}
+
+.consulting-content .title {
+  margin-bottom: 3.5rem;
+}
+
+.consulting-services {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.consulting-service-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid var(--border);
+  transition: all var(--transition-fast);
+  cursor: default;
+}
+
+.service-number {
+  color: var(--muted);
+  padding-top: 0.2rem;
+}
+
+.service-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.service-title {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--foreground);
+  transition: color var(--transition-normal);
+}
+
+.service-desc {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.service-arrow {
+  color: var(--accent);
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: all var(--transition-normal);
+  margin-top: 0.2rem;
+}
+
+.consulting-service-item:hover {
+  border-bottom-color: var(--accent);
+}
+
+.consulting-service-item:hover .service-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.consulting-service-item:hover .service-title {
+  color: var(--accent);
+}
+
+@media (max-width: 1024px) {
+  .consulting-container {
+    flex-direction: column;
+  }
+  .consulting-image-wrapper {
+    width: 100%;
+    height: 60vh;
+  }
+  .consulting-content {
+    width: 90%;
+    position: relative;
+    right: auto;
+    margin-top: -10rem;
+    padding: 3rem 2rem;
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+@media (max-width: 768px) {
+  .consulting-content {
+    width: 100%;
+    margin-top: -5rem;
+    padding: 2rem 1.5rem;
+  }
+  .consulting-service-item {
+    padding: 0.75rem 0;
+  }
+}

@@ -1,0 +1,43 @@
+:root {
+  /* Colors */
+  --background: #F6F0E8; /* Warm Ivory */
+  --surface: #E7D7C6; /* Warm Sand */
+  --foreground: #211B18; /* Deep Espresso */
+  --surface-dark: #302824; /* Soft Charcoal */
+  
+  --accent: #B8654D; /* Muted Terracotta */
+  --accent-secondary: #69705B; /* Muted Olive */
+  
+  --gold: #B69A70; /* Soft Gold */
+  
+  --muted: rgba(33, 27, 24, 0.6);
+  --border: rgba(33, 27, 24, 0.15);
+  --border-light: rgba(246, 240, 232, 0.15);
+  
+  --glass: rgba(246, 240, 232, 0.72);
+  --glass-dark: rgba(48, 40, 36, 0.4);
+  
+  /* Shadows */
+  --shadow-sm: 0 4px 12px rgba(33, 27, 24, 0.05);
+  --shadow-md: 0 12px 32px rgba(33, 27, 24, 0.08);
+  --shadow-lg: 0 24px 64px rgba(33, 27, 24, 0.12);
+  
+  /* Typography */
+  --font-serif: 'DM Serif Display', serif;
+  --font-sans: 'Inter', sans-serif;
+  
+  /* Spacing & Layout */
+  --header-height: 80px;
+  --section-padding: 8rem 2rem;
+  --section-padding-mobile: 5rem 1.5rem;
+  
+  /* Radii */
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 8px;
+  
+  /* Transitions */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-normal: 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+  --transition-slow: 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}

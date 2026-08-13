@@ -1,0 +1,49 @@
+.selected-work-section {
+  background-color: var(--background);
+  overflow: hidden;
+  padding-bottom: 10rem;
+}
+
+.demo-label-container {
+  margin-bottom: 4rem;
+}
+
+.demo-label {
+  border: 1px solid var(--border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  color: var(--muted);
+}
+
+.gallery-carousel-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.gallery-carousel {
+  display: flex;
+  gap: 2rem;
+  padding: 0 2rem;
+  width: max-content;
+}
+
+.gallery-item {
+  width: 600px;
+  height: 450px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .gallery-item {
+    width: 300px;
+    height: 350px;
+  }
+}

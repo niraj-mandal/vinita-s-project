@@ -1,0 +1,154 @@
+.hero-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 800px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  background-color: var(--foreground);
+}
+
+.hero-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+/* Layer 1 */
+.hero-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+
+/* Layer 2 */
+.hero-gradient {
+  background: linear-gradient(
+    to bottom,
+    rgba(33, 27, 24, 0.2) 0%,
+    rgba(33, 27, 24, 0.5) 50%,
+    rgba(33, 27, 24, 0.8) 100%
+  );
+  z-index: 2;
+}
+
+/* Layer 3 */
+.hero-light {
+  background: radial-gradient(
+    circle at 30% 60%,
+    rgba(184, 101, 77, 0.15) 0%, /* Terracotta soft glow */
+    transparent 60%
+  );
+  z-index: 3;
+}
+
+/* Layer 4 */
+.hero-content {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  padding-bottom: 8rem;
+}
+
+.hero-text-wrapper {
+  max-width: 900px;
+}
+
+.hero-eyebrow {
+  display: inline-block;
+  color: var(--background);
+  margin-bottom: 2rem;
+}
+
+.dot {
+  color: var(--accent);
+  margin: 0 0.5rem;
+}
+
+.hero-title {
+  color: var(--background);
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-title-line {
+  line-height: 1.1;
+  padding-bottom: 0.1em; /* Prevent descender clipping */
+}
+
+/* Layer 5 */
+.hero-floating-element {
+  position: absolute;
+  right: 5rem;
+  top: 35%;
+  writing-mode: vertical-rl;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: rgba(246, 240, 232, 0.5);
+  z-index: 5;
+  pointer-events: none;
+}
+
+.hero-floating-element .dot {
+  margin: 1rem 0;
+  display: inline-block;
+  transform: rotate(90deg);
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 0;
+  right: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  z-index: 5;
+}
+
+.hero-scroll-indicator .label-small {
+  color: rgba(246, 240, 232, 0.6);
+  writing-mode: vertical-rl;
+}
+
+.scroll-line-track {
+  width: 1px;
+  height: 120px;
+  background-color: rgba(246, 240, 232, 0.15);
+  position: relative;
+}
+
+.scroll-line-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--accent);
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+  }
+  .hero-content {
+    padding-bottom: 6rem;
+  }
+  .hero-eyebrow {
+    margin-bottom: 1.5rem;
+  }
+  .hero-floating-element {
+    display: none;
+  }
+  .hero-scroll-indicator {
+    right: 1.5rem;
+  }
+}
