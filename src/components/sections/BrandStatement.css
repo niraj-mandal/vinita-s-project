@@ -25,13 +25,13 @@
 
 .statement-vertical-line {
   width: 1px;
-  background-color: var(--accent);
+  background-color: var(--accent-brass);
 }
 
 .statement-eyebrow {
   writing-mode: vertical-rl;
   transform: rotate(180deg);
-  color: var(--accent);
+  color: var(--accent-burgundy);
 }
 
 .statement-right {

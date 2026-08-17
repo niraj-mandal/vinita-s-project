@@ -1,90 +1,151 @@
 .manpower-section {
-  background-color: var(--foreground);
-  position: relative;
-  overflow: hidden;
-  min-height: 120vh;
-  display: flex;
+  background-color: var(--accent-burgundy);
+  color: var(--primary-light);
+  padding: 8rem 0;
+}
+
+.manpower-grid {
+  display: grid;
+  grid-template-columns: 4fr 3fr 5fr;
+  gap: 4rem;
   align-items: center;
 }
 
-.manpower-full-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+/* Column 1: Text */
+.manpower-text-col {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 0;
+}
+
+.section-label-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
+}
+
+.label-number, .label-text {
+  font-family: var(--font-sans);
+  font-size: 0.65rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--sand);
+}
+
+.label-separator {
+  color: var(--sand);
+  font-size: 0.65rem;
+  opacity: 0.5;
+}
+
+.manpower-title {
+  font-family: var(--font-serif);
+  font-size: 3rem;
+  line-height: 1.05;
+  color: var(--primary-light);
+  margin-bottom: 1.5rem;
+}
+
+.manpower-title .italic {
+  color: var(--sand);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.manpower-desc {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: rgba(244, 238, 228, 0.7);
+  margin-bottom: 3rem;
+  max-width: 90%;
+}
+
+.manpower-cta {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: var(--sand);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(216, 200, 180, 0.4);
+  padding-bottom: 0.25rem;
+  align-self: flex-start;
+  transition: all var(--transition-fast);
+  text-decoration: none;
+}
+
+.manpower-cta:hover {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary-light);
+}
+
+/* Column 2: Image */
+.manpower-image-col {
   width: 100%;
-  height: 100%;
+}
+
+.manpower-image-wrapper {
+  width: 100%;
+  aspect-ratio: 3/4;
+  overflow: hidden;
 }
 
 .manpower-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
 }
 
-.manpower-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to right, rgba(33, 27, 24, 0.95) 0%, rgba(33, 27, 24, 0.6) 50%, rgba(33, 27, 24, 0.3) 100%);
+/* Column 3: 2x2 Features Grid */
+.manpower-features-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  padding-left: 2rem;
 }
 
-.manpower-container {
-  position: relative;
-  z-index: 2;
-  height: 100%;
+.manpower-feature-item {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 10rem 2rem;
 }
 
-.manpower-header {
-  max-width: 800px;
+.manpower-icon {
+  color: var(--sand);
+  margin-bottom: 1rem;
 }
 
-.manpower-header .title {
-  color: var(--background);
-}
-
-.manpower-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  margin-top: 4rem;
-}
-
-.manpower-list-item {
-  color: var(--background);
+.manpower-feature-title {
   font-family: var(--font-sans);
-  font-weight: 500;
+  font-size: 0.75rem;
+  font-weight: 600;
   letter-spacing: 0.1em;
-  font-size: 1rem;
-  border-bottom: 1px solid rgba(246, 240, 232, 0.2);
-  padding-bottom: 1rem;
-  width: 100%;
-  max-width: 400px;
+  color: var(--primary-light);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
 }
 
+.manpower-feature-desc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  line-height: 1.5;
+  color: rgba(244, 238, 228, 0.7);
+}
+
+/* Responsive */
 @media (max-width: 1024px) {
-  .manpower-overlay {
-    background: linear-gradient(to bottom, rgba(33, 27, 24, 0.8) 0%, rgba(33, 27, 24, 0.6) 100%);
+  .manpower-grid {
+    grid-template-columns: 1fr;
+    gap: 4rem;
   }
-  .manpower-list {
-    margin-top: 3rem;
+  
+  .manpower-features-col {
+    padding-left: 0;
   }
 }
-
 @media (max-width: 768px) {
-  .manpower-section {
-    min-height: auto;
-  }
-  .manpower-container {
-    padding: 6rem 1.5rem;
-  }
-  .manpower-panel {
-    padding: 1rem 1.5rem;
+  .manpower-features-col {
+    grid-template-columns: 1fr;
   }
 }

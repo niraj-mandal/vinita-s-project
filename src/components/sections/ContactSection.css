@@ -1,80 +1,70 @@
 .contact-section {
-  background-color: var(--foreground);
-  color: var(--background);
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
   padding-top: 12rem;
   padding-bottom: 12rem;
   position: relative;
   overflow: hidden;
 }
 
-/* Add a very subtle noise over the dark background */
-.contact-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-  opacity: 0.05;
-  pointer-events: none;
-}
-
 .contact-container {
-  position: relative;
-  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .contact-content {
-  max-width: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 800px;
+}
+
+.contact-label-group {
+  justify-content: center;
+  margin-bottom: 3rem;
 }
 
 .contact-title {
-  color: var(--background);
+  font-family: var(--font-serif);
+  font-size: 4.5rem;
+  line-height: 1.05;
+  color: var(--primary-light);
   margin-bottom: 4rem;
 }
 
-.text-accent {
-  color: var(--accent);
+.contact-title .italic {
+  color: var(--accent-burgundy);
   font-style: italic;
+  font-weight: 400;
 }
 
 .contact-actions {
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  justify-content: center;
 }
 
-.contact-main-cta {
-  padding: 1.25rem 2.5rem;
-  font-size: 0.9rem;
-}
-
-.contact-email-link {
+.contact-cta {
   font-family: var(--font-sans);
-  font-size: 1rem;
-  color: rgba(246, 240, 232, 0.7);
-  text-decoration: underline;
-  text-underline-offset: 4px;
-  transition: color var(--transition-fast);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  color: var(--sand);
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(216, 200, 180, 0.4);
+  padding-bottom: 0.25rem;
+  transition: all var(--transition-fast);
+  text-decoration: none;
 }
 
-.contact-email-link:hover {
-  color: var(--accent);
+.contact-cta:hover {
+  color: var(--primary-light);
+  border-bottom-color: var(--primary-light);
 }
 
 @media (max-width: 768px) {
-  .contact-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
-  }
-  .contact-actions {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 2rem;
-  }
-  .contact-main-cta {
-    width: 100%;
-    justify-content: center;
+  .contact-title {
+    font-size: 3rem;
   }
 }
